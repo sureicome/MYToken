@@ -12,7 +12,7 @@ contract ERC20Token {
     uint256 totalSupplys;
 
 
-    mapping(address => uint) balances; // mapping the address of the owner to get the balances of the owner
+    mapping(address => uint) balances; 
     mapping(address => mapping(address => uint256)) allowed; 
     
     event Approval(
@@ -28,9 +28,9 @@ contract ERC20Token {
     );
 
     constructor() {
-        tokenName = "megphillo";
+        tokenName = "sureicome";
         totalSupplys = 1000000000000000;
-        symbol = "MGPO";
+        symbol = "SRINCM";
         decimals = 18;
         owner = msg.sender;
         balances[msg.sender] += totalSupplys;
