@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
@@ -24,6 +24,17 @@ contract MyToken is ERC20, ERC20Burnable, ERC20Pausable, Ownable {
         _mint(to, amount);
     }
 
+    function transfer(address to, uint256 amount) public override returns (bool) {
+        return super.transfer(to, amount);
+    }
+
+    function burn(uint256 amount) public override {
+        super.burn(amount);
+    }
+
+    function burnFrom(address account, uint256 amount) public override {
+        super.burnFrom(account, amount);
+    }
 
     function _update(address from, address to, uint256 value)
         internal
